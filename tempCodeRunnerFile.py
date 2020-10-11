@@ -25,9 +25,11 @@ def schedule_class(weekday):
     """Checks for any matching weekday and schedules all the classes"""
     routine = csv_dict_list('routine.csv')
     for perEntry in routine:
-        if perEntry["weekday"] == weekday:
-            getattr(schedule.every(), weekday).at(perEntry['start_time']).do(open_zoom, thisClass = perEntry)
-            getattr(schedule.every(), weekday).at(perEntry['end_time']).do(close_zoom, thisClass = perEntry)
+        schedule.every().monday.at('4:36:00').do(open_zoom, url = 'https://www.google.com')
+        break
+        # if perEntry["weekday"] == weekday:
+        #     getattr(schedule.every(), weekday).at(perEntry['start_time']).do(open_zoom, thisClass = perEntry)
+        #     getattr(schedule.every(), weekday).at(perEntry['end_time']).do(close_zoom, thisClass = perEntry)
             # schedule.every().friday.at('13:05').do(open_url, url = 'https://www.google.com')
 
 #index to weekdays
